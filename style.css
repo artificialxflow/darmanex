@@ -1,0 +1,162 @@
+:root {
+    --main-bg-color: #f8f9fa;
+    --main-text-color: #333;
+    --primary-color: #6f42c1;
+    --secondary-color: #6c757d;
+    --primary-text-color: #6f42c1;
+    --secondary-bg-color: #e9ecef;
+    --gradient-main: linear-gradient(135deg, #6f42c1 0%, #00bcd4 100%);
+    --card-shadow: 0 4px 24px 0 rgba(111,66,193,0.10);
+    --card-radius: 1.5rem;
+    --btn-radius: 2rem;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin .25s ease-out;
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    color: #222;
+    box-shadow: 0 0 24px 0 rgba(111,66,193,0.08);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #6f42c1;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#sidebar-wrapper .list-group-item {
+    background: transparent;
+    color: #222;
+    border: none;
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    border-radius: 1.2rem;
+    margin-bottom: 6px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+#sidebar-wrapper .list-group-item i {
+    font-size: 1.3em;
+    margin-left: 8px;
+    color: #6f42c1;
+    transition: color 0.2s;
+}
+
+#sidebar-wrapper .list-group-item.active, #sidebar-wrapper .list-group-item:hover {
+    background: #fff;
+    color: #6f42c1 !important;
+    font-weight: bold;
+    box-shadow: 0 2px 12px 0 rgba(111,66,193,0.10);
+}
+#sidebar-wrapper .list-group-item.active i, #sidebar-wrapper .list-group-item:hover i {
+    color: #00bcd4;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.2s;
+}
+#menu-toggle:hover {
+    color: #00bcd4;
+}
+
+.primary-text {
+    color: var(--primary-text-color) !important;
+}
+
+.second-text {
+    color: var(--secondary-color) !important;
+}
+
+.secondary-bg {
+    background-color: var(--secondary-bg-color) !important;
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
+.card {
+    border: none;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(111,66,193,0.18);
+}
+
+.btn, button {
+    border-radius: var(--btn-radius) !important;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(111,66,193,0.08);
+}
+.btn-primary {
+    background: var(--gradient-main);
+    border: none;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00bcd4 0%, #6f42c1 100%);
+    color: #fff;
+}
+
+.display-4, .display-5, h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--gradient-main);
+    color: #fff;
+}
+
+.accordion-button {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
